@@ -68,7 +68,7 @@ class SlackNotifier < BuilderPlugin
   end
 
   def slack_endpoint
-    "#{url}/services/hooks/slackbot?token=#{token}&channel=#{channel}"
+    "#{url}/services/hooks/slackbot?token=#{token}&channel=#{URI.escape(channel)}"
   end
 
   def post_to_slack!(message)

@@ -25,9 +25,9 @@ class SlackNotifierTest < Test::Unit::TestCase
 
     context "when url, token, and channel are provided" do
       setup do
-        @slack_notifier.url = "url"
-        @slack_notifier.token = "token"
-        @slack_notifier.channel = "Office"
+        @slack_notifier.url = "https://my.slack.com"
+        @slack_notifier.token = "mytoken"
+        @slack_notifier.channel = "#general"
 
         test_url = 'http://cruisecontrolrb.org/project/test_project'
         @build = stub('Build', :successful? => false, :label => "abcdef",
@@ -35,6 +35,11 @@ class SlackNotifierTest < Test::Unit::TestCase
                                 'Project', :name => "Test Project"),
                               :changeset => "test changeset",
                               :url => test_url)
+      end
+
+
+      should "generate correct slack endpoint url" do
+        assert_equal "https://my.slack.com/services/hooks/slackbot?token=mytoken&channel=%23general", @slack_notifier.slack_endpoint
       end
 
       should "be enabled" do
