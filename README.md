@@ -54,9 +54,9 @@ set up to notify Campfire, configure it with the following:
       project.slack_notifier.channel               = 'builds'
 
       # Optional:
-      project.campfire_notifier.only_failed_builds    = true
-      project.campfire_notifier.only_first_failure    = true
-      project.campfire_notifier.only_fixed_and_broken_builds = true
+      project.slack_notifier.only_failed_builds    = true
+      project.slack_notifier.only_first_failure    = true
+      project.slack_notifier.only_fixed_and_broken_builds = true
     end
 
 These configuration options should be pretty self-explanatory.
