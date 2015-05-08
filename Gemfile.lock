@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mocha (0.9.12)
+    rcov (0.9.11)
+    shoulda (2.11.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mocha (~> 0.9.10)
+  rcov (~> 0.9.9)
+  shoulda (~> 2.11.3)
