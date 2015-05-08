@@ -1,5 +1,4 @@
 require 'net/https'
-require 'json'
 
 unless defined?(BuilderPlugin)
   # Define a dummy Plugin class if not already available
